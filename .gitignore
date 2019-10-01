@@ -1,0 +1,5 @@
+# Dependencies
+node_modules/
+
+# User/Editor Specific
+.vscode/
