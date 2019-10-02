@@ -16,7 +16,7 @@
         <?php if ( has_nav_menu( 'primary' ) ) { 
           wp_nav_menu( array(
             'container' => "",
-            'menu_id' => 'menu-bottom-nav',
+            'menu_class' => 'menu-bottom-nav menu-primary',
             'theme_location' => 'primary'
           ) );
         } ?>
@@ -26,7 +26,7 @@
           <div class="footer-content-bottom">
             <?php wp_nav_menu( array(
               'container' => "",
-              'menu_id' => 'menu-bottom-nav',
+              'menu_class' => 'menu-bottom-nav menu-secondary',
               'theme_location' => 'secondary'
             ) ); ?>
           </div>

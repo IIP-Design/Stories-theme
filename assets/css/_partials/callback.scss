@@ -4,6 +4,13 @@
 .callback {
   color: $white;
   font-family: $serif;
-  font-size: $font-normal;
+  font-size: $font-small;
   text-decoration: none;
+}
+
+// Non-mobile style
+@media screen and ( min-width: 500px ) {
+  .callback {
+    font-size: $font-normal;
+  }
 }

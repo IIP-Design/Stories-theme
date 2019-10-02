@@ -20,18 +20,33 @@ footer {
     
     &-top {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
     }
   }
 
   &-image {
     margin-right: 1rem;
-    width: 100px;
+    width: 80px;
   }
 
   &-wrap {
     align-items: center;
     display: flex;
+    margin: 0;
     padding: 1rem;
+  }
+}
+
+// Non-mobile style
+@media screen and ( min-width: 500px ) {
+  .footer {
+    &-content-top {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-image {
+      width: 100px;
+    }
   }
 }
