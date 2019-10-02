@@ -11,7 +11,8 @@
   "version": "v1.0.0",
   "scripts": {
     "build": "webpack --config config/webpack.config.js --mode production",
-    "build:dev": "webpack --config config/webpack.config.js --mode development"
+    "build:dev": "webpack --config config/webpack.config.js --mode development",
+    "watch": "webpack --watch --config config/webpack.config.js --mode development"
   },
   "devDependencies": {
     "css-loader": "^3.2.0",
