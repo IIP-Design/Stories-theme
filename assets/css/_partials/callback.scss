@@ -1,0 +1,9 @@
+@import '../_variables/colors.scss';
+@import '../_variables/fonts.scss';
+
+.callback {
+  color: $white;
+  font-family: $serif;
+  font-size: $font-normal;
+  text-decoration: none;
+}

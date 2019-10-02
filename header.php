@@ -14,11 +14,7 @@
 
     <header>
       <div class="content-wrap header-wrap">
-        <a class="header-callback" href="https://state.gov">
-          <span class="all-caps">U.S. Department</span>
-          <span class="italic white-space-pre">of </span>
-          <span class="all-caps">State</span>
-        </a>
+        <?php get_template_part( 'partials/callback' ) ?>
 
         <div class="top-nav-container">
           

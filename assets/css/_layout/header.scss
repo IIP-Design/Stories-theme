@@ -1,5 +1,4 @@
 @import '../_variables/colors.scss';
-@import '../_variables/fonts.scss';
 
 header {
   background-color: $dark-blue;
@@ -10,11 +9,4 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-}
-
-.header-callback {
-  color: $white;
-  font-family: $serif;
-  font-size: $font-normal;
-  text-decoration: none;
 }
