@@ -1,0 +1,14 @@
+#menu-bottom-nav {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  > .menu-item:not(:first-of-type) {
+    margin-left: .75rem
+  }
+
+  > .current-menu-item {
+    font-weight: $bold;
+  }
+}

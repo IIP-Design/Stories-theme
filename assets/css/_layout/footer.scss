@@ -1,0 +1,37 @@
+@import '../_variables/borders.scss';
+@import '../_variables/colors.scss';
+@import '../_variables/fonts.scss';
+
+footer {
+  background-color: $dark-blue;
+}
+
+.footer{ 
+  &-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &-bottom {
+      border-top: $grey-border;
+      margin-top: .75rem;
+      padding-top: .75rem;
+    }
+    
+    &-top {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &-image {
+    margin-right: 1rem;
+    width: 100px;
+  }
+
+  &-wrap {
+    align-items: center;
+    display: flex;
+    padding: 1rem;
+  }
+}
