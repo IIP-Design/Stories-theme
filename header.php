@@ -32,3 +32,5 @@
 
       </div> <!-- End header-wrap -->
     </header>
+
+    <div class="main-content">
