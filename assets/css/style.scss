@@ -11,8 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: stories
 */
 
-// Import fonts
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans&display=swap');
+// Import base styles
+@import './_base/globals.scss';
+@import './_base/transforms.scss';
 
 // Import global styles
 @import './globals.scss';
