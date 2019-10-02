@@ -15,8 +15,9 @@ Text Domain: stories
 @import './_base/globals.scss';
 @import './_base/transforms.scss';
 
-// Import global styles
-@import './globals.scss';
+// Import layout styles
+@import './_layout/header.scss';
+@import './_layout/nav-top.scss';
 
 // Import page specific styles
 @import './stories/iran.scss';
