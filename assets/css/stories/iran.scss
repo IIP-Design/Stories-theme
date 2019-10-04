@@ -543,24 +543,13 @@ hr.card-horizontal {
   font-size: 16px;
 }
 
-.content {
+/*.content {
   padding-right: 0px;
   padding-left: 0px;
   margin-top: -50px;
   margin-bottom: -50px;
 }
-
-#menu-primary {
-  display: none;
-}
-
-#masthead {
-  display: none;
-}
-
-.site-footer {
-  display: none;
-}
+*/
 
 h1 {
   font-size: 4em;
@@ -578,20 +567,12 @@ h2 {
 }
 
 .entry-title {
-  text-align: center;
+  display: none;
 }
 
 body {
   background: #ffffff;
   font-size: 16px;
-}
-
-.site-container {
-  box-shadow: none;
-}
-
-.entry-header {
-  display: none;
 }
 
 .center-video {
