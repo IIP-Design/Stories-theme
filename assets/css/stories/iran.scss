@@ -482,53 +482,6 @@ hr.card-horizontal {
   margin: 57px;
 }
 
-
-/* Footer Section */
-.template-footer {
-  background-color: #062136;
-  background-size: cover;
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-.template-footer-body {
-  color: #fff;
-  font-family: 'Open Sans', sans-serif;
-  max-width: 500px;
-}
-
-.story-date {
-  font-size: 1.75em;
-  font-family: "Eb Garamond", Times, Serif;
-  font-weight: 300;
-  font-style: normal;
-  letter-spacing: -.75px;
-  color: black;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.button-section {
-  height: 150px;
-}
-
-.button-section-items {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 /* Misc Edits*/
 .button {
   background-color: #062136;
