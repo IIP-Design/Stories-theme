@@ -1,23 +1,25 @@
 @import '../_variables/colors.scss';
 @import '../_variables/fonts.scss';
 
-#menu-top-nav {
+#menu-primary {
   display: flex;
+  flex-direction: row;
   list-style-type: none;
 
-  > .menu-item {
-    margin-left: .75rem
+  >.menu-item {
+    margin-left: 1.5rem;
   }
 
-  > .current-menu-item {
+  >.current-menu-item {
     font-weight: $bold;
     text-decoration: underline;
   }
 }
 
-.menu-item > a {
+.menu-item>a {
   color: $white;
   font-family: $sans-serif;
   font-size: $font-small;
   text-decoration: none;
+  text-transform: uppercase;
 }
