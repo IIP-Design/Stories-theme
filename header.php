@@ -14,15 +14,11 @@
 
     <header>
       <div class="content-wrap header-wrap">
-        <a class="header-callback" href="https://state.gov">
-          <span class="all-caps">U.S. Department</span>
-          <span class="italic white-space-pre">of </span>
-          <span class="all-caps">State</span>
-        </a>
+        <?php get_template_part( 'partials/callback' ) ?>
 
         <div class="top-nav-container">
           
-            <?php if ( has_nav_menu('primary') ) { 
+            <?php if ( has_nav_menu( 'primary' ) ) { 
               wp_nav_menu( array(
                   'theme_location' => 'primary'
                 ) );
@@ -32,3 +28,5 @@
 
       </div> <!-- End header-wrap -->
     </header>
+
+    <div class="main-content">
