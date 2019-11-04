@@ -1,4 +1,6 @@
-@import '../_variables/colors.scss';
+@import "../_variables/colors.scss";
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap");
 
 * {
   box-sizing: border-box;
@@ -15,8 +17,19 @@ body {
   background-color: $white;
   display: flex;
   flex-direction: column;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   height: 100vh;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", sans-serif;
 }
 
 img {
