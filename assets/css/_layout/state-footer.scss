@@ -1,0 +1,213 @@
+.footer {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 2;
+  background-color: #062135;
+  color: #fff;
+  padding-bottom: 46px;
+  padding-top: 46px;
+}
+@media (min-width: 48em) {
+  .footer {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 15;
+    grid-column: 1 / span 8;
+  }
+}
+@media (min-width: 62em) {
+  .footer {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 23;
+    grid-column: 1 / span 12;
+  }
+}
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  max-width: 336px;
+  width: 100%;
+}
+@media (min-width: 62em) {
+  .footer__content {
+    max-width: 1260px;
+  }
+}
+@media (min-width: 62em) {
+  .footer__logo {
+    display: flex;
+    justify-content: center;
+  }
+  .isIE11 .footer__logo {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 75em) {
+  .footer__logo {
+    display: flex;
+    flex: 0 0 427px;
+    justify-content: flex-start;
+    height: 90px;
+  }
+}
+.footer__logo-image {
+  background-image: url('https://viperstaticdev.s3.amazonaws.com/policy/uploads/2019/11/footer-logo-vert-2x.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  display: block;
+  height: 113px;
+  margin: 0 auto;
+  width: 248px;
+}
+@media (min-width: 75em) {
+  .footer__logo-image {
+    background-image: url('https://viperstaticdev.s3.amazonaws.com/policy/uploads/2019/11/footer-logo-horz-2x.png');
+    height: 90px;
+    margin: 0;
+    width: 360px;
+  }
+}
+.footer__primary {
+  width: 100%;
+}
+.footer__primary ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 26px;
+}
+@media (min-width: 48em) {
+  .footer__primary ul {
+    padding-bottom: 36px;
+  }
+}
+@media (min-width: 62em) {
+  .footer__primary ul {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 75em) {
+  .footer__primary ul {
+    padding-bottom: 0;
+  }
+}
+.footer__primary li {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+@media (min-width: 75em) {
+  .footer__primary li {
+    max-width: 150px;
+  }
+}
+.footer__primary li a {
+  font-family: 'EB Garamond', Times, Serif;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0;
+  color: #fff;
+}
+.footer__primary li a:hover,
+.footer__primary li a:active,
+.footer__primary li a:focus {
+  color: #8d98aa;
+}
+.footer__primary-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 336px;
+  margin: 0 auto 40px;
+  width: 100%;
+}
+@media (min-width: 48em) {
+  .footer__primary-wrapper {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 62em) {
+  .footer__primary-wrapper {
+    max-width: none;
+    width: 100%;
+  }
+}
+@media (min-width: 75em) {
+  .footer__primary-wrapper {
+    flex-direction: row;
+    padding-bottom: 10px;
+  }
+}
+.footer__aux {
+  border-top: rgba(141, 152, 170, 0.5) 1px solid;
+  width: 100%;
+  padding-top: 40px;
+}
+.footer__aux ul {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 62em) {
+  .footer__aux ul {
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 75em) {
+  .footer__aux ul {
+    justify-content: flex-start;
+  }
+}
+.footer__aux li {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+@media (min-width: 75em) {
+  .footer__aux li:not(:last-child) {
+    margin-right: 36px;
+  }
+}
+.footer__aux li a {
+  font-family: 'Open Sans', Arial, Sans-Serif;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #fff;
+}
+.footer__aux li a:hover,
+.footer__aux li a:active,
+.footer__aux li a:focus {
+  color: #8d98aa;
+}
+
+.frame {
+  margin: 0 auto;
+  max-width: 1260px;
+  padding: 0 20px;
+  width: 100%;
+}
+@media (min-width: 48em) {
+  .frame {
+    padding: 0 40px;
+  }
+}
+@media (min-width: 62em) {
+  .frame {
+    padding: 0 50px;
+  }
+}
+@media (min-width: 75em) {
+  .frame {
+    padding: 0 60px;
+  }
+}
