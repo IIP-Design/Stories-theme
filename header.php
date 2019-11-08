@@ -12,21 +12,25 @@
 
   <body <?php body_class(); ?>>
 
-    <header>
-      <div class="content-wrap header-wrap">
-        <?php get_template_part( 'partials/callback' ) ?>
+    <header id="masthead" class="site-header nav__main-header">
 
-        <div class="top-nav-container">
-          
-            <?php if ( has_nav_menu( 'primary' ) ) { 
-              wp_nav_menu( array(
-                  'theme_location' => 'primary'
-                ) );
-            } ?>
-
-        </div> <!-- End top-nav-container -->
-
-      </div> <!-- End header-wrap -->
+      <div class="nav__utility-wrapper">
+        <?php get_template_part( 'partials/state_header' ) ?>
+      </div>
+      
+      <div class="nav__wrapper">
+        <?php get_template_part( 'partials/state_nav' ) ?>
+        <ul class="nav__header-buttons">
+          <li>
+            <a class="nav__nav-trigger" href="#nav__primary-nav">Menu<span></span></a>
+          </li>
+          <li>
+            <a class="nav__logo" href="https://www.state.gov">
+              <span class="screen-reader-text">State Department Home</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
 
     <div class="main-content">
