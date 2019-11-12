@@ -1,5 +1,7 @@
   </div> <!-- End main-content -->
   
+  <?php get_template_part( 'partials/state_nav_overlay' ) ?>
+  
   <footer class="site-footer footer">
     <div class="footer__content frame">
 
@@ -9,6 +11,6 @@
   </footer>
 
   <?php wp_footer(); ?>
-
+  
   </body>
 </html>
