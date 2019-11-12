@@ -1,0 +1,12 @@
+// Adjustments to state base CSS
+.nav__primary-nav,
+.nav__utility-items,
+.nav__bureaus-offices-list {
+  list-style: none;
+}
+
+@media (min-width: 62em) {
+  .nav__primary-nav {
+    padding: 0;
+  }
+}
