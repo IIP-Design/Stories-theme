@@ -16,9 +16,9 @@ Text Domain: stories
 @import './_base/transforms.scss';
 
 // Import layout styles
+@import './_layout/grid.scss';
 @import './_layout/state-footer.scss';
 @import './_layout/state-header.scss';
-@import './_layout/grid.scss';
 
 // Import partials styles
 @import './_partials/callback.scss';
