@@ -106,6 +106,7 @@ strong {
 
 body {
   background-color: $white;
+  color: $black;
   display: flex;
   flex-direction: column;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -122,6 +123,7 @@ a {
   transition: color 0.2s ease;
 }
 
+button,
 p {
   font-family: 'Open Sans', Arial, sans-serif;
 }
@@ -133,7 +135,6 @@ h4,
 h5,
 h6 {
   font-family: 'EB Garamond', Times, serif;
-  font-weight: bold;
 }
 
 img {
