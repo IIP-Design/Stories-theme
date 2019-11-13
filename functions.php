@@ -5,7 +5,7 @@ add_action( 'wp_enqueue_scripts', 'fiveg_enqueue');
 add_action( 'wp_enqueue_scripts', 'iran_enqueue');
 
 function state_nav_enqueue() {
-  wp_enqueue_script( 'state_nav', get_stylesheet_directory_uri() . '/includes/state-nav.js', array(), null, true );
+  wp_enqueue_script( 'state_nav', get_stylesheet_directory_uri() . '/assets/js/policy-bundle.js', array(), null, true );
 }
 
 function fiveg_enqueue() {

@@ -10,16 +10,33 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader
           },
           'css-loader',
           'sass-loader'
+        ]
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: [
+                '@babel/plugin-proposal-optional-chaining',
+                'babel-plugin-transform-class-properties'
+              ],
+              presets: ['@babel/preset-env']
+            }
+          },
+          'eslint-loader'
         ]
       }
     ]
   },
   output: {
-    filename: 'assets/js/stories-bundle.js',
+    filename: 'assets/js/policy-bundle.js',
     path: paths.themeRoot
   },
   plugins: [
@@ -27,4 +44,4 @@ module.exports = {
       filename: 'style.css'
     } )
   ]
-}
+};
