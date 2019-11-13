@@ -23,3 +23,13 @@ function iran_enqueue() {
     wp_enqueue_style( 'iran', get_stylesheet_directory_uri() . '/includes/stories/iran/iran.css', array(), null, false );
   }
 };
+
+add_action( 'template_redirect', 'four_oh_four_redirect' );
+function four_oh_four_redirect() {
+  if( is_404())
+    {
+      $page = get_page_by_path( '5g' );
+      wp_redirect (get_permalink( $page->ID ) );
+      exit();
+    }
+}
