@@ -1,50 +1,106 @@
-const menuItems = document.getElementsByClassName('menu-item-type-custom has-children');
-const menuItemsArray = [...menuItems];
-
+const menuItems = [...document.getElementsByClassName('menu-item-type-custom has-children')];
 const overlay = document.getElementsByClassName('nav__overlay');
 
-const makeNavVisible = item => {
-  console.log('clicked');
-  const subItems = item.children;
-  const subItemsArray = [...subItems];
+const showNavDropdown = item => {
+  const els = [...item.children];
 
-  if (overlay && overlay[0].classList.contains('is-visible')) {
-    if (subItemsArray) {
-      // subItemsArray.forEach(item => {
-      //   if (item.classList.contains('nav__secondary-nav')) {
-      //     item.classList.remove('is-visible');
-      //     item.classList.add('is-hidden');
-      //   } else {
-      //     item.classList.remove('selected');
-      //   }
-      // });
+  if (item.classList.contains('yes')) {
+    if (overlay && overlay[0].classList.contains('is-visible')) {
+      overlay[0].classList.remove('is-visible');
     }
 
-    // overlay[0].classList.remove('is-visible');
-  } else if (overlay && !overlay[0].classList.contains('is-visible')) {
-    overlay[0].classList.add('is-visible');
+    if (els) {
+      els.forEach(el => {
+        if (el.tagName.toLowerCase() === 'ul') {
+          if (el.classList.contains('is-visible')) {
+            el.classList.remove('is-visible');
+          }
+          if (!el.classList.contains('is-hidden')) {
+            el.classList.add('is-hidden');
+          }
+        } else if (el.tagName.toLowerCase() === 'button') {
+          if (el.classList.contains('selected')) {
+            el.classList.remove('selected');
+          }
+        }
+      });
+    }
 
-    if (subItemsArray) {
-      subItemsArray.forEach(item => {
-        if (item.classList.contains('nav__secondary-nav')) {
-          item.classList.remove('is-hidden');
-          item.classList.remove('is-visible');
-        } else {
-          item.classList.add('selected');
+    item.classList.remove('yes');
+  } else {
+    const allMenuItems = [...item.parentNode.children];
+
+    allMenuItems.forEach(sibling => {
+      if (sibling.classList.contains('yes')) {
+        sibling.classList.remove('yes');
+      }
+    });
+    item.classList.add('yes');
+
+    if (overlay && !overlay[0].classList.contains('is-visible')) {
+      overlay[0].classList.add('is-visible');
+    }
+
+    if (els) {
+      els.forEach(el => {
+        if (el.tagName.toLowerCase() === 'ul') {
+          if (!el.classList.contains('is-visible')) {
+            el.classList.add('is-visible');
+          }
+          if (el.classList.contains('is-hidden')) {
+            el.classList.remove('is-hidden');
+          }
+        } else if (el.tagName.toLowerCase() === 'button') {
+          if (!el.classList.contains('selected')) {
+            el.classList.add('selected');
+          }
         }
       });
     }
   }
 };
 
+const hideNavDropdown = item => {
+  const els = [...item.children];
+
+  if (els) {
+    els.forEach(el => {
+      if (el.tagName.toLowerCase() === 'ul') {
+        if (el.classList.contains('is-visible')) {
+          el.classList.remove('is-visible');
+        }
+        if (!el.classList.contains('is-hidden')) {
+          el.classList.add('is-hidden');
+        }
+      } else if (el.tagName.toLowerCase() === 'button') {
+        if (el.classList.contains('selected')) {
+          el.classList.remove('selected');
+        }
+      }
+    });
+  }
+};
+
+const toggleNav = navItem => {
+  const allMenuItems = [...navItem.parentNode.children];
+
+  allMenuItems.forEach(item => {
+    hideNavDropdown(item);
+  });
+
+  showNavDropdown(navItem);
+};
+
 if (menuItems) {
-  menuItemsArray.forEach(item => {
-    return item.addEventListener('click', () => makeNavVisible(item));
+  menuItems.forEach(item => {
+    return item.addEventListener('click', () => toggleNav(item));
   });
 }
 
+// Get bureau list menu
 const bureauList = document.querySelector('.nav__bureaus-offices-list');
 
+// Popout bureau submenu
 const activateSubmenu = item => {
   const els = [...item.children];
   if (els) {
@@ -63,6 +119,7 @@ const activateSubmenu = item => {
   }
 };
 
+// Hide bureau submenu
 const deactivateSubmenu = item => {
   const els = [...item.children];
   if (els) {
@@ -81,6 +138,7 @@ const deactivateSubmenu = item => {
   }
 };
 
+// Handle click on bureau menu item
 const toggleSubmenu = bureau => {
   // Set all menu items as inactive
   const allMenuItems = [...bureau.parentNode.children];
