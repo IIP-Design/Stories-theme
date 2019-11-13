@@ -161,3 +161,79 @@ if (bureauList) {
     return bureau.addEventListener('click', () => toggleSubmenu(bureau));
   });
 }
+
+// MOBILE
+const setMobileStyles = () => {
+  const utilityMenu = document.getElementById('menu-utility-menu');
+  utilityMenu.setAttribute('style', 'display: none');
+};
+
+const toggleMobileNav = () => {
+  const navTrigger = document.querySelector('.nav__nav-trigger');
+  const masthead = document.getElementById('masthead');
+  const navMenu = document.getElementById('nav__primary-nav');
+
+  const toggleVisiblity = el => {
+    if (el && el.classList.contains('nav-is-visible')) {
+      el.classList.remove('nav-is-visible');
+    } else if (el && !el.classList.contains('nav-is-visible')) {
+      el.classList.add('nav-is-visible');
+    }
+  };
+
+  toggleVisiblity(navTrigger);
+  toggleVisiblity(masthead);
+  toggleVisiblity(navMenu);
+};
+
+const setMobileNav = () => {
+  const navTrigger = document.querySelector('.nav__nav-trigger');
+
+  navTrigger.addEventListener('click', toggleMobileNav);
+};
+
+const toggleMoveOut = () => {
+  const navMenu = document.getElementById('nav__primary-nav');
+
+  if (navMenu) {
+    if (!navMenu.classList.contains('moves-out')) {
+      navMenu.classList.add('moves-out');
+    }
+  }
+};
+
+const toggleMoveOutOff = e => {
+  e.stopPropagation();
+  const navMenu = document.getElementById('nav__primary-nav');
+
+  if (navMenu) {
+    if (navMenu.classList.contains('moves-out')) {
+      navMenu.classList.remove('moves-out');
+    }
+  }
+
+  if (menuItems) {
+    menuItems.forEach(item => {
+      if (item.classList.contains('yes')) {
+        item.classList.remove('yes');
+      }
+    });
+  }
+};
+
+if (window.screen.width < 769) {
+  setMobileStyles();
+  setMobileNav();
+
+  if (menuItems) {
+    menuItems.forEach(item => {
+      return item.addEventListener('click', () => toggleMoveOut());
+    });
+  }
+
+  const backButton = document.querySelector('.nav__go-back');
+
+  if (backButton) {
+    backButton.addEventListener('click', e => toggleMoveOutOff(e));
+  }
+}
