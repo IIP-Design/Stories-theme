@@ -1,7 +1,7 @@
 @import '../_variables/colors.scss';
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap');
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,500,600,700,800&display=swap');
 
 * {
   box-sizing: border-box;
@@ -12,6 +12,22 @@ html {
   height: 100%;
   width: 100vw;
   padding: 0;
+}
+
+html {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 16px;
+  }
 }
 
 html,
@@ -91,8 +107,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
@@ -105,12 +119,11 @@ strong {
 }
 
 body {
-  background-color: $white;
-  color: $black;
+  background-color: #ffffff;
+  color: #333333;
   display: flex;
   flex-direction: column;
   font-family: 'Open Sans', Arial, sans-serif;
-  font-size: 16px;
   height: 100vh;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -126,6 +139,19 @@ a {
 button,
 p {
   font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  p {
+    line-height: 27px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  p {
+    line-height: 24px;
+  }
 }
 
 h1,
@@ -135,6 +161,19 @@ h4,
 h5,
 h6 {
   font-family: 'EB Garamond', Times, serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.6rem;
+}
+
+h3 {
+  font-size: 2.1rem;
 }
 
 img {
