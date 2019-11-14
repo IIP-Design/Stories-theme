@@ -18,3 +18,9 @@
 .nav__nav-trigger {
   display: none;
 }
+
+@media screen and (max-width: 768px) {
+  .nav__header-buttons {
+    background-color: $dark-blue !important;
+  }
+}
