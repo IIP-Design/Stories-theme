@@ -21,6 +21,11 @@
           <div class="nav__policies-list">
             <div class="nav__policies-list-items">          
               <div class="nav__policies-list-item">
+                <a href="https://policy.state.gov/5g/" class="" >
+                  5G Security
+                </a>
+              </div>
+              <div class="nav__policies-list-item">
                 <a href="https://www.state.gov/policy-issues/anti-corruption-and-transparency/" class="" >
                   Anti-Corruption and Transparency
                 </a>
