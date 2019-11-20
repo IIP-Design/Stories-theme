@@ -33,3 +33,14 @@ function four_oh_four_redirect() {
       exit();
     }
 }
+
+add_action( 'wp_head', 'add_og_headers');
+function add_og_headers() {
+  global $post;
+  if ( is_singular() ) {
+    echo '<meta property="og:title" content="U.S. Department of State | ' . get_the_title( $post ) . ' Policy" />';
+    echo '<meta property="og:type" content="website" />';
+    echo '<meta property="og:url" content="' . get_permalink( $post ) . '" />';
+    echo '<meta property="og:image" content="' . get_the_post_thumbnail_url( $post ) . '" />';
+  }
+}
