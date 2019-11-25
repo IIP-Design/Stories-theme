@@ -40,24 +40,27 @@ function stories_add_styles() {
   $source_bucket = get_option( 'stories-bucket' );
 
   if ( is_page( 'iran' ) ) {
-    echo '<link href="https://' . $source_bucket . '.s3.amazonaws.com/microsites/iran/iran.css" rel="stylesheet" />';
+    echo '<link href="https://' . $source_bucket . '/microsites/iran/live/iran.css" rel="stylesheet" />';
   }
 
   if ( is_page( '5g' ) ) {
-    echo '<link href="https://' . $source_bucket . '.s3.amazonaws.com/microsites/fiveg/fiveg.css" rel="stylesheet" />';
+    echo '<link href="https://' . $source_bucket . '/microsites/fiveg/live/fiveg.css" rel="stylesheet" />';
   }
 }
 
 // Load appropriate script on policy pages
 function stories_add_scripts() {
   $source_bucket = get_option( 'stories-bucket' );
+  $s3_base_uri = get_option( 'stories-bucket-use-s3' );
+
+  $bucket_uri = $s3_base_uri == 1 ? $source_bucket . '.s3.amazonaws.com' : $source_bucket;
 
   if ( is_page( 'iran' ) ) {
-    echo '<script type="text/javascript" src="https://' . $source_bucket . '.s3.amazonaws.com/microsites/iran/iran.js"></script>';
+    echo '<script type="text/javascript" src="https://' . $bucket_uri . '/microsites/iran/live/iran.js"></script>';
   }
 
   if ( is_page( '5g' ) ) {
-    echo '<script type="text/javascript" src="https://' . $source_bucket . '.s3.amazonaws.com/microsites/fiveg/fiveg.js"></script>';
+    echo '<script type="text/javascript" src="https://' . $bucket_uri . '/microsites/fiveg/live/fiveg.js"></script>';
   }
 }
 
@@ -113,10 +116,19 @@ function define_submenu_fields() {
   add_settings_field(
     'stories-bucket',
     __( 'Set S3 Bucket:', 'stories' ),
-    'stories_input_markup',
+    'stories_bucket_markup',
     'stories',
     'stories-section',
     array( 'label_for' => 'stories-bucket' )
+  );
+
+  add_settings_field(
+    'stories-bucket-use-s3',
+    __( 'Include the base S3 URI:', 'stories' ),
+    'stories_use_uri_markup',
+    'stories',
+    'stories-section',
+    array( 'label_for' => 'stories-bucket-use-s3' )
   );
 
   register_setting(
@@ -124,11 +136,16 @@ function define_submenu_fields() {
     'stories-bucket',
     'sanitize_text_field'
   );
+
+  register_setting(
+    'stories',
+    'stories-bucket-use-s3'
+  );
 }
 
 // Markup for input field for stories scripts and styles source bucket
-function stories_input_markup() {
-  $stories_buckets = get_option( 'stories-bucket' );
+function stories_bucket_markup() {
+  $stories_bucket = get_option( 'stories-bucket' );
 
   $html = '<fieldset>';
     $html .= '<input ';
@@ -137,7 +154,24 @@ function stories_input_markup() {
       $html .= 'name="stories-bucket" ';
       $html .= 'placeholder="iip-design-dev-modules" ';
       $html .= 'type="text" ';
-      $html .= 'value="' . $stories_buckets;
+      $html .= 'value="' . $stories_bucket;
+    $html .= '">';
+  $html .= '</fieldset>';
+
+  echo $html;
+}
+
+function stories_use_uri_markup() {
+  $use_base_uri = get_option( 'stories-bucket-use-s3' );
+  
+  $html = '<fieldset>';
+    $html .= '<input ';
+      $html .= 'class="regular-text" ';
+      $html .= 'id="stories-bucket-use-s3" ';
+      $html .= 'name="stories-bucket-use-s3" ';
+      $html .= 'type="checkbox" ';
+      $html .= 'value="1"';
+      $html .= checked( 1, $use_base_uri, false );
     $html .= '">';
   $html .= '</fieldset>';
 
