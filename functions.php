@@ -38,13 +38,16 @@ function add_og_headers() {
 // Load appropriate stylesheet on policy pages
 function stories_add_styles() {
   $source_bucket = get_option( 'stories-bucket' );
+  $s3_base_uri = get_option( 'stories-bucket-use-s3' );
+
+  $bucket_uri = $s3_base_uri == 1 ? $source_bucket . '.s3.amazonaws.com' : $source_bucket;
 
   if ( is_page( 'iran' ) ) {
-    echo '<link href="https://' . $source_bucket . '/microsites/iran/live/iran.css" rel="stylesheet" />';
+    echo '<link href="https://' . $bucket_uri . '/microsites/iran/live/iran.css" rel="stylesheet" />';
   }
 
   if ( is_page( '5g' ) ) {
-    echo '<link href="https://' . $source_bucket . '/microsites/fiveg/live/fiveg.css" rel="stylesheet" />';
+    echo '<link href="https://' . $bucket_uri . '/microsites/fiveg/live/fiveg.css" rel="stylesheet" />';
   }
 }
 
