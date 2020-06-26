@@ -46,6 +46,11 @@
                 </a>
               </div>
               <div class="nav__policies-list-item">
+                <a href="https://www.state.gov/coronavirus/" class="">
+                  Coronavirus
+                </a>
+              </div>
+              <div class="nav__policies-list-item">
                 <a href="https://www.state.gov/policy-issues/countering-terrorism/" class="">
                   Countering Terrorism
                 </a>
@@ -83,6 +88,11 @@
               <div class="nav__policies-list-item">
                 <a href="https://www.state.gov/policy-issues/human-trafficking/" class="">
                   Human Trafficking
+                </a>
+              </div>
+              <div class="nav__policies-list-item">
+                <a href="https://www.state.gov/military-civil-fusion/" class="">
+                  Military-Civil Fusion
                 </a>
               </div>
               <div class="nav__policies-list-item">
